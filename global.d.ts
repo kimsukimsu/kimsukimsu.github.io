@@ -246,6 +246,14 @@ interface Publication {
   description?: string;
 }
 
+interface PaperReview {
+  title: string;
+  venue?: string;
+  year?: string;
+  link?: string;
+  summary?: string;
+}
+
 interface GoogleAnalytics {
   /**
    * GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
@@ -361,6 +369,11 @@ interface Config {
    * Publication list
    */
   publications?: Array<Publication>;
+
+  /**
+   * Paper review list
+   */
+  paperReviews?: Array<PaperReview>;
 
   /**
    * Resume

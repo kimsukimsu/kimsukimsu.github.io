@@ -24,10 +24,10 @@ import EducationCard from './education-card';
 import CertificationCard from './certification-card';
 import { GithubProject } from '../interfaces/github-project';
 import GithubProjectCard from './github-project-card';
-import ExternalProjectCard from './external-project-card';
 import BlogCard from './blog-card';
 import Footer from './footer';
 import PublicationCard from './publication-card';
+import PaperReviewCard from './paper-review-card';
 
 /**
  * Renders the GitProfile component.
@@ -254,21 +254,18 @@ const GitProfile = ({ config }: { config: Config }) => {
                       publications={sanitizedConfig.publications}
                     />
                   )}
-                  {sanitizedConfig.projects.external.projects.length !== 0 && (
-                    <ExternalProjectCard
-                      loading={loading}
-                      header={sanitizedConfig.projects.external.header}
-                      externalProjects={
-                        sanitizedConfig.projects.external.projects
-                      }
-                      googleAnalyticId={sanitizedConfig.googleAnalytics.id}
-                    />
-                  )}
+                  {/* External Projects removed as requested; leave empty to hide */}
                   {sanitizedConfig.blog.display && (
                     <BlogCard
                       loading={loading}
                       googleAnalyticsId={sanitizedConfig.googleAnalytics.id}
                       blog={sanitizedConfig.blog}
+                    />
+                  )}
+                  {sanitizedConfig.paperReviews.length !== 0 && (
+                    <PaperReviewCard
+                      loading={loading}
+                      paperReviews={sanitizedConfig.paperReviews}
                     />
                   )}
                 </div>
